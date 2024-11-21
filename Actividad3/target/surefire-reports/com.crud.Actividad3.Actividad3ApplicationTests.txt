@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.crud.Actividad3.Actividad3ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.170 s -- in com.crud.Actividad3.Actividad3ApplicationTests
