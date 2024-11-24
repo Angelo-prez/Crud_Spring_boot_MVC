@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Persona</title>
+</head>
+<body>
+<h1 th:text="${usuario.id == null} ? 'Nueva Usuario' : 'Editar Usuario'"></h1>
+<form method="post" th:action="@{/Usuarios}" th:object="${usuario}">
+    <input th:field="*{id}" type="hidden"/>
+
+    <label>Password:</label>
+    <input th:field="*{password}" type="text"/>
+    <label>Nombre:</label>
+    <input th:field="*{nombre}" type="text"/>
+    <label>Apellido:</label>
+    <input th:field="*{apellido}" type="text"/>
+    <label>Rol:</label>
+    <input th:field="*{rol}" type="text"/>
+    <label>Email:</label>
+    <input th:field="*{email}" type="text"/>
+    <label>Telefono:</label>
+    <input th:field="*{telefono}" type="text"/>
+    <label>Estado:</label>
+    <input th:field="*{estado}" type="text"/>
+    <label>Fecha de Registo:</label>
+    <input th:field="*{fechaRegistro}" type="text"/>
+
+    <button type="submit">Guardar</button>
+</form>
+<a href="/Usuarios">Volver a la lista</a>
+</body>
+</html>

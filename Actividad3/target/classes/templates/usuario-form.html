@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Usuarios</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+<h1>Lista de Usuarios</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Password</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Rol</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Estado</th>
+        <th>Fecha de Registro</th>
+
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="usuario : ${usuarios}">
+
+        <td th:text="${usuario.id}"></td>
+        <td th:text="${usuario.password}"></td>
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.apellidos}"></td>
+        <td th:text="${usuario.rol}"></td>
+        <td th:text="${usuario.email}"></td>
+        <td th:text="${usuario.telefono}"></td>
+        <td th:text="${usuario.estado}"></td>
+        <td th:text="${usuario.fechaRegistro}"></td>
+
+        <td>
+            <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}">Editar</a>
+            <a th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/usuarios/nuevo">Nueva Usuario</a>
+</body>
+</html>
